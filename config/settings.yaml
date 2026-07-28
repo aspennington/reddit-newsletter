@@ -1,32 +1,53 @@
 # =============================================================================
 # REDDIT NEWSLETTER - CONFIGURATION
 # =============================================================================
-# Edit this file to customize your newsletter. No code changes needed!
+# Customized for: Weekly Meme + Parenting + Lefty + Nerd Digest
+# Delivery: Fridays at 8:30 PM EDT (00:30 UTC Saturday)
+# =============================================================================
 
 # --- SUBREDDITS TO MONITOR ---
-# Add or remove subreddits here. The script will fetch top posts from each.
 subreddits:
-  - LocalLLaMA          # Open source AI models
-  - AI_Agents           # Autonomous AI agents
-  - PromptEngineering   # Prompt crafting techniques
-  - MachineLearning     # Academic/research ML
-  - technews            # General tech industry news
+  # Section 1: Core Memes
+  - memes
+  - dankmemes
+  - wholesomememes
+  - comedyheaven
+
+  # Section 2: Lefty Humor & Social Satire
+  - PoliticalHumor
+  - LateStageCapitalism
+  - ABoringDystopia
+
+  # Section 3: Parenting Chaos
+  - ParentingMemes
+  - ToddlerMemes
+  - ParentingFails
+
+  # Section 4: Nerd Culture Highlights
+  - GeekMemes
+  - DnDMemes
+  - PrequelMemes
+  - MarvelMemes
+
+  # Section 5: Wildcards
+  - Unexpected
 
 # --- FETCH SETTINGS ---
 fetch:
-  posts_per_subreddit: 5          # How many posts to grab from each subreddit
-  time_period: week               # Options: hour, day, week, month, year, all
-  delay_between_requests: 1.0     # Seconds to wait between API calls (be polite!)
-  max_retries: 3                  # How many times to retry a failed request
+  posts_per_subreddit: 2          # Top 2 posts per subreddit
+  time_period: week               # Weekly digest
+  delay_between_requests: 1.0     # Polite API pacing
+  max_retries: 3                  # Retry failed requests
 
 # --- NEWSLETTER SETTINGS ---
 newsletter:
-  stories_to_include: 5-7         # How many stories the AI should pick
+  stories_to_include: 2-3         # AI selection disabled, but some repos still require a range
   output_directory: output/newsletters
   output_filename: weekly_digest.md
+  use_ai_summary: false           # Disable AI summaries
 
 # --- EMAIL SETTINGS ---
-# Actual credentials are in .env file (never commit those!)
 email:
-  subject: "🚀 The Weekly Sync"
-  send_on_completion: true        # Set to false for dry runs
+  subject: "Friday Meme Digest — Chaos, Parenting, Lefty Humor & Nerd Culture"
+  send_on_completion: true        # Email after generation
+  to: "YOUR_EMAalexspenno@gmail.com"           # Add your email here
