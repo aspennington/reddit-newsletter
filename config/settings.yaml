@@ -50,4 +50,4 @@ newsletter:
 email:
   subject: "Friday Meme Digest — Chaos, Parenting, Lefty Humor & Nerd Culture"
   send_on_completion: true        # Email after generation
-  to: "YOUR_EMAalexspenno@gmail.com"           # Add your email here
+  to: "alexspenno@gmail.com"           # Add your email here
