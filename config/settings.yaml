@@ -11,32 +11,25 @@ subreddits:
   - memes
   - dankmemes
   - wholesomememes
-  - comedyheaven
 
   # Section 2: Lefty Humor & Social Satire
-  - PoliticalHumor
   - LateStageCapitalism
-  - ABoringDystopia
 
   # Section 3: Parenting Chaos
   - ParentingMemes
   - ToddlerMemes
-  - ParentingFails
 
   # Section 4: Nerd Culture Highlights
-  - GeekMemes
   - DnDMemes
   - PrequelMemes
-  - MarvelMemes
 
   # Section 5: Wildcards
-  - Unexpected
 
 # --- FETCH SETTINGS ---
 fetch:
-  posts_per_subreddit: 2          # Top 2 posts per subreddit
+  posts_per_subreddit: 3          # Top 2 posts per subreddit
   time_period: week               # Weekly digest
-  delay_between_requests: 1.0     # Polite API pacing
+  delay_between_requests: 2.0     # Polite API pacing
   max_retries: 3                  # Retry failed requests
 
 # --- NEWSLETTER SETTINGS ---
@@ -44,7 +37,7 @@ newsletter:
   stories_to_include: 2-3         # AI selection disabled, but some repos still require a range
   output_directory: output/newsletters
   output_filename: weekly_digest.md
-  use_ai_summary: false           # Disable AI summaries
+  use_ai_summary: true           # Disable AI summaries
 
 # --- EMAIL SETTINGS ---
 email:
