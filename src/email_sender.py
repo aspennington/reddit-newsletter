@@ -33,11 +33,13 @@ def send_email(html_content, subject="🚀 The Weekly Sync"):
     """
     # Get credentials from environment
     sender_email = os.environ.get("EMAIL_ADDRESS")
+    print("    DEBUG sender:", sender_email)
     password = os.environ.get("EMAIL_APP_PASSWORD")
-    recipient_env = os.environ.get("RECIPIENT_EMAIL", "")
+    recipient_env = os.environ.get("RECIPIENT_EMAIL", "aspennington@live.com")
     
     # Support multiple recipients (comma-separated)
     recipients = [email.strip() for email in recipient_env.split(",") if email.strip()]
+    print("    DEBUG recipients:", recipients)
 
     # Validate credentials
     if not sender_email or not password:
@@ -64,11 +66,12 @@ def send_email(html_content, subject="🚀 The Weekly Sync"):
         recipient_display = ", ".join(recipients) if len(recipients) <= 3 else f"{len(recipients)} recipients"
         print(f"    📤 Sending to {recipient_display}...")
         context = ssl.create_default_context()
-        
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+
+        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+            smtp.starttls(context=context)
             smtp.login(sender_email, password)
             smtp.send_message(msg)
-        
+            
         print("    ✅ Email sent successfully!")
         return True
         
