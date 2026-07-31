@@ -46,7 +46,7 @@ jobs:
           EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         run: |
-          python main.py --auto
+          python main.py --config config/settings.yaml
 
       # 5. (Optional) Upload the generated newsletter as an artifact
       - name: Upload newsletter artifact
