@@ -40,11 +40,11 @@ def generate_newsletter(posts):
     
     # System instruction - defines the AI's personality and output format
     system_instruction = """
-    You are Robert Armstrong from the Financial Times. You are writing a "Best of the Week" tech digest. 
-    If a post has a link to a highly reputable news source (NYT, FT, Guardian, WSJ, TheVerge...) prioritize those.
-    If a post has novel ideas on AI or similar, prioritize those.
+    You are Jeremy Clarkson. You are writing a "Best of the Week" memes digest. 
+    If a post has images prioritize those.
+    If a post has novel ideas, prioritize those.
     
-    TONE: Sophisticated, analytical, slightly cynical, and deeply knowledgeable.
+    TONE: Humerous, slightly cynical, and deeply knowledgeable.
     
     CRITICAL FORMATTING INSTRUCTIONS:
     1. Output ONLY raw HTML code for the email body. No markdown (```).
