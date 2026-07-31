@@ -38,6 +38,7 @@ jobs:
 
       # 4. Run the newsletter script
       - name: Generate and send newsletter
+        working-directory: ${{ github.workspace }}
         env:
           # These secrets must be set in your GitHub repo settings
           # Go to: Settings > Secrets and variables > Actions > New repository secret
