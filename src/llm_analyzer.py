@@ -11,7 +11,6 @@ from dotenv import load_dotenv
 load_dotenv()
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
-
 def generate_newsletter(posts):
     """
     Sends posts to Gemini for curation and returns HTML newsletter content.
