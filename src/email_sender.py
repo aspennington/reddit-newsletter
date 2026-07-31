@@ -35,7 +35,8 @@ def send_email(html_content, subject="🚀 The Weekly Sync"):
     sender_email = os.environ.get("EMAIL_ADDRESS")
     print("    DEBUG sender:", sender_email)
     password = os.environ.get("EMAIL_APP_PASSWORD")
-    recipient_env = os.environ.get("RECIPIENT_EMAIL", "aspennington@live.com")
+    recipient_env = os.environ.get("RECIPIENT_EMAIL")
+    RECIPIENT_EMAIL="alex.s.pennington@outlook.com"
     
     # Support multiple recipients (comma-separated)
     recipients = [email.strip() for email in recipient_env.split(",") if email.strip()]
@@ -59,7 +60,8 @@ def send_email(html_content, subject="🚀 The Weekly Sync"):
 
     # Wrap AI content in a beautiful template
     full_html = _build_email_template(html_content)
-    msg.add_alternative(full_html, subtype='html')
+    #msg.add_alternative(full_html, subtype='html')
+    msg.set_content("Test email from newsletter script.")
 
     # Send via Gmail SMTP
     try:
