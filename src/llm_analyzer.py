@@ -73,7 +73,7 @@ def generate_newsletter(posts):
         client = Client(api_key=GEMINI_API_KEY)
         
         response = client.models.generate_content(
-            model="gemini-3.5-flash-lite", 
+            model="gemini-3.6-flash", 
             contents=[formatted_content],
             config=types.GenerateContentConfig(
                 system_instruction=system_instruction
